@@ -50,8 +50,8 @@
 
 <?php 
 if (isset($_POST['bSimpan'])) {
-	$NPM=$_POST['NPM'];
-	$Nama=$_POST['Nama'];
+	$NPM=filter_var($_POST['NPM'],FILTER_SANITIZE_STRING);
+	$Nama=filter_var($_POST['Nama'],FILTER_SANITIZE_STRING);
 	$password=$_POST['password'];
 	$koneksi=new mysqli("localhost","root","","kelompok1");
 
