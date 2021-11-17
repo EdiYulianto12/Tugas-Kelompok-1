@@ -52,7 +52,7 @@
 if (isset($_POST['bSimpan'])) {
 	$NPM=filter_var($_POST['NPM'],FILTER_SANITIZE_STRING);
 	$Nama=filter_var($_POST['Nama'],FILTER_SANITIZE_STRING);
-	$password=$_POST['password'];
+	$password=filter_var($_POST['password'],FILTER_SANITIZE_STRING);
 	$koneksi=new mysqli("localhost","root","","kelompok1");
 
 	$sql="INSERT INTO `anggota`(`NPM`, `Nama`, `password`) VALUES ('".$NPM."','".$Nama."', '".$password."');";
